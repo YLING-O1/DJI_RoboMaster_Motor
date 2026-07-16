@@ -24,8 +24,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "RM_motor_common.h"
-#include "DJI_M3508.h"
+#include "drv_can.h"
+#include "dvc_DJI_M3508.h"
 
 /* USER CODE END Includes */
 

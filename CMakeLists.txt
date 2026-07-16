@@ -33,14 +33,15 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        HLY/Inc/RM_motor_common.h
-        HLY/Src/RM_motor_common.c
-        HLY/Inc/DJI_M3508.h
-        HLY/Src/DJI_M3508.c
-        HLY/Inc/DJI_M2006.h
-        HLY/Src/DJI_M2006.c
-        HLY/Inc/DJI_GM6020.h
-        HLY/Src/DJI_GM6020.c)
+        HLY/Inc/drv_can.h
+        HLY/Src/drv_can.c
+        HLY/Inc/dvc_DJI_M3508.h
+        HLY/Src/dvc_DJI_M3508.c
+        HLY/Inc/dvc_DJI_M2006.h
+        HLY/Src/dvc_DJI_M2006.c
+        HLY/Inc/dvc_DJI_GM6020.h
+        HLY/Src/dvc_DJI_GM6020.c
+        HLY/Inc/drv_can.h)
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
@@ -53,10 +54,10 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
-        HLY/Src/RM_motor_common.c
-        HLY/Src/DJI_M3508.c
-        HLY/Src/DJI_M2006.c
-        HLY/Src/DJI_GM6020.c
+        HLY/Src/drv_can.c
+        HLY/Src/dvc_DJI_GM6020.c
+        HLY/Src/dvc_DJI_M2006.c
+        HLY/Src/dvc_DJI_M3508.c
         HLY/Src/alg_PID.c
         HLY/Src/drv_math.c
 )
